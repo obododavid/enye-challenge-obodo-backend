@@ -17,6 +17,7 @@ function gqlServer() {
 
     apolloServer.applyMiddleware({ app, path: '/', cors: true });
 
+
     return app;
 }
 

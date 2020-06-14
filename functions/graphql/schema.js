@@ -1,9 +1,23 @@
 const { gql } = require('apollo-server-express');
 
 const schema = gql`
+  type Coordinates{
+    latitude: Int
+    longitude: Int
+  }
+
+  type ResultDetails {
+    searchFacility: String
+    searchId: String
+    searchPlace: String
+    searchRadius: String
+    searchAt: String
+    searchCoordinates: Coordinates
+  }
+
   type Query {
-    "A simple type for getting started!"
     hello: String
+    getResults(id: String): [ResultDetails]
   }
 `;
 
