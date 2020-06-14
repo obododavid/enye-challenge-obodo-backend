@@ -20,6 +20,6 @@ const gqlServer = require('./graphql/server');
 
 
 const server = gqlServer();
-server.listen(4000)
+// server.listen(4000)
 exports.api = https.onRequest(server);
 

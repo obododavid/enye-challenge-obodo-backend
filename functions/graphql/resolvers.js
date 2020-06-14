@@ -14,8 +14,6 @@ const serviceAccount = {
     "client_x509_cert_url": process.env.serviceAccount_Client
 }
 
-
-
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
     databaseURL: "https://enye-cohort4-obodo.firebaseio.com"
