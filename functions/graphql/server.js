@@ -7,8 +7,6 @@ const resolvers = require('./resolvers');
 
 const gqlServer = () => {
     const app = express();
-    app.use(bodyParser.json())
-
 
     const apolloServer = new ApolloServer({
         typeDefs: schema,
