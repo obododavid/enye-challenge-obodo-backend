@@ -17,9 +17,9 @@ const gqlServer = require('./graphql/server');
 // });
 // apolloServer.applyMiddleware({ app, path: '/', cors: true });
 // console.log('running on port 4000')
-// server.listen(4000)
 
 
 const server = gqlServer();
+server.listen(4000)
 exports.api = https.onRequest(server);
 
