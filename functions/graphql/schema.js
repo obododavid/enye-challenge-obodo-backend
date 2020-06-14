@@ -17,7 +17,7 @@ const schema = gql`
 
   type Query {
     hello: String
-    getResults(id: String): [ResultDetails]
+    getSearchResults(id: String): [ResultDetails]
   }
 `;
 

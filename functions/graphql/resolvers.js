@@ -38,7 +38,7 @@ const snapshotToArray = (snapshot) => {
 const resolverFunctions = {
     Query: {
         hello: () => 'Obodo David built this :)',
-        getResults: (_, { id }) => {
+        getSearchResults: (_, { id }) => {
             console.log(id)
             return db.collection('searches').where("userId", "==", `${id}`)
                 .get()

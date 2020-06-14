@@ -1,11 +1,25 @@
 const { https } = require('firebase-functions');
 const gqlServer = require('./graphql/server');
 
-const server = gqlServer();
+// const { ApolloServer } = require('apollo-server-express');
+// const bodyParser = require('body-parser');
+// const schema = require('./graphql/schema');
+// const resolvers = require('./graphql/resolvers');
+// const express = require('express');
+// const app = express();
+// app.use(bodyParser.json());
+// const apolloServer = new ApolloServer({
+//     typeDefs: schema,
+//     resolvers,
+//     // Enable graphiql gui
+//     introspection: true,
+//     playground: true
+// });
+// apolloServer.applyMiddleware({ app, path: '/', cors: true });
+// console.log('running on port 4000')
+// server.listen(4000)
 
-// Graphql api
-// https://us-central1-<project-name>.cloudfunctions.net/api/
-server.listen(4000)
-console.log('running on port 4000')
+
+const server = gqlServer();
 exports.api = https.onRequest(server);
 

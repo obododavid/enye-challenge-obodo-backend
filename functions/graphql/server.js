@@ -1,11 +1,14 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
+const bodyParser = require('body-parser');
 
 const schema = require('./schema');
 const resolvers = require('./resolvers');
 
-function gqlServer() {
+const gqlServer = () => {
     const app = express();
+    app.use(bodyParser.json())
+
 
     const apolloServer = new ApolloServer({
         typeDefs: schema,
