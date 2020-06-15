@@ -6,12 +6,17 @@ const schema = gql`
     longitude: String
   }
 
+  type Time {
+    seconds: Int
+    nanoseconds: Int
+  }
+
   type ResultDetails {
     searchFacility: String
     searchId: String
     searchPlace: String
     searchRadius: String
-    searchAt: String
+    searchAt: Time
     searchCoordinates: Coordinates
   }
 
