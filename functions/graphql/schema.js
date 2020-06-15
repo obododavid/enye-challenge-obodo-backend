@@ -1,6 +1,8 @@
 const { gql } = require('apollo-server-express');
 
 const schema = gql`
+  scalar Date
+
   type Coordinates{
     latitude: String
     longitude: String
@@ -16,7 +18,7 @@ const schema = gql`
     searchId: String
     searchPlace: String
     searchRadius: String
-    searchAt: Time
+    searchAt: Date
     searchCoordinates: Coordinates
   }
 

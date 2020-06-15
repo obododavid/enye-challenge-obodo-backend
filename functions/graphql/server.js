@@ -14,17 +14,13 @@ const gqlServer = () => {
         res.setHeader('Access-Control-Allow-Origin', '*');
         res.setHeader(
             'Access-Control-Allow-Methods',
-            'OPTIONS, GET, POST, PUT, PATCH, DELETE'
+            'GET, POST'
         );
         res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-        if (req.method === 'OPTIONS') {
-            return res.sendStatus(200);
-        }
         next();
     });
 
     app.use((error, req, res, next) => {
-        console.log(error, 'my set error');
         const status = error.statusCode || 500;
         const message = error.message;
         const data = error.data;
@@ -34,7 +30,6 @@ const gqlServer = () => {
     const apolloServer = new ApolloServer({
         typeDefs: schema,
         resolvers,
-        // Enable graphiql gui
         introspection: true,
         playground: true
     });
